@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Confirmation page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
+
+        <h1 class="nhsuk-panel__title">
+            Thank you for your feedback
+          </h1>
+
+      </div>
+
+
+      <h2>
+        What happens next
+      </h2>
+
+      <p>
+        We'll use the feedback you provided today to make recommendations to your GP practice.
+      </p>
+      <p>
+        Your feedback is completely anonymous.
+      </p>
+ {{ button({
+  "text": "Close survey",
+  "classes": "nhsuk-button--secondary"
+}) }}
+    </div>
+  </div>
+{% endblock %}

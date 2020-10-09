@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading--l">Give feedback</h1>
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "Overall, how did you feel about the service you recieved today?",
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": false
+            }
+          },
+          "items": [
+            {
+              "value": "very satisfied",
+              "text": "Very satisfied"
+            },
+            {
+              "value": "satisfied",
+              "text": "Satisfied"
+            },
+            {
+              "value": "neither satisfied or dissatisfied",
+              "text": "Neither satisfied or dissatisfied"
+            },
+            {
+              "value": "dissatisfied",
+              "text": "Dissatisfied"
+            },
+            {
+              "value": "very dissatisfied",
+              "text": "Very dissatisfied"
+            }
+          ]
+        }) }}
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-heading-l" for="example">
+    How could we improve your experience?
+  </label>
+  <span class="nhsuk-hint" id="example-hint">
+    Do not include personal or financial information, for example, your National Insurance number or credit card details.
+  </span>
+  <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
+</div>
+
+        {{ button({
+          "text": "Send feedback",
+          "id": "btn_submit",
+          "href": "confirmation-page"
+        }) }}
+
+      </form>
+
+      {{ backLink({
+        "href": "confirmation-page",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

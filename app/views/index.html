@@ -17,6 +17,18 @@
 
 <!-- Breadcrumb goes inside the beforeContent block -->
 {% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
 {% endblock %}
 
 <!-- Your page content goes inside the content block -->
@@ -27,47 +39,39 @@
 
       <!-- Change the page title here -->
       <h1>
-        NHS.UK prototype kit
-        <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span>
+        Tell us you experience of your GP appointment.
       </h1>
 
       <!-- Add your content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
 
       <p class="nhsuk-lede-text">
-        This kit lets you rapidly create HTML prototypes of NHS services.
+        Monitoring and improving the patient experience of GP surgeries.
       </p>
 
       <hr>
 
       <h2>
-        About this page
+        Prototype v1
       </h2>
 
-      <p>
-        Use this page as the index for your project.
-      </p>
+{{ actionLink({
+  "text": "Start prototype",
+  "href": "start-page"
+}) }}
       
-      <p>
-        You'll find the code for this page at <strong>/app/views/index.html</strong>.
-      </p>
-
-      <p>
-        There is also an <a href="/page-example">example page</a>, which contains a selection of NHS.UK frontend styles and components.
-      </p>
-
       <hr>
 
       <h2>
-        Documentation
+        Useful Documentation
       </h2>
 
       <ul>
         <li>
-          Get started with <a href="/docs">how to guides and page templates</a>
+          Miro board <a href="#">insights</a>
         </li>
         <li>
-          Copy and paste styles and components from the <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>
+          Architectural design <a href="#">V1</a>
         </li>
       </ul>
 
