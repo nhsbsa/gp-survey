@@ -3,8 +3,8 @@ const express = require('express');
 const router = express.Router();
 
 // Add your routes here - above the module.exports line
-var NotifyClient = require('notifications-node-client').NotifyClient,
-    notify = new NotifyClient(process.env.NOTIFYAPIKEY);
+// var NotifyClient = require('notifications-node-client').NotifyClient,
+//     notify = new NotifyClient(process.env.NOTIFYAPIKEY);
 
     // The URL here needs to match the URL of the page that the user is on
 // when they type in their email address
