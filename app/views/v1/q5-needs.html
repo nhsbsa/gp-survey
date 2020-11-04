@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/v1/confirmation-page" method="post" class="form">
+<fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+    <h1 class="nhsuk-fieldset__heading">
+    <span class="nhsuk-caption-l">
+              <span class="nhsuk-u-visually-hidden"> This is:</span>
+              Question 6 of 6
+            </span>
+      Overall, thinking about the reason you wanted care or advice, were your needs met?
+    </h1>
+  </legend>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="needs-definitely" name="needs" type="radio" value="yes definitely">
+                <label class="nhsuk-label nhsuk-radios__label" for="needs-definitely">
+                Yes, definitely</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="needs-somewhat" name="needs" type="radio" value="yes extent">
+                <label class="nhsuk-label nhsuk-radios__label" for="needs-somewhat">
+                Yes, to some extent</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="needs-no" name="needs" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="needs-no">
+                No, not at all</label>
+              </div>
+              <div class="nhsuk-radios__divider">or
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="needs-nk" name="needs" type="radio" value="not sure">
+                <label class="nhsuk-label nhsuk-radios__label" for="needs-nk">
+                I&#39;m not sure</label>
+              </div>
+
+            </div>
+          </div>
+
+        </fieldset>
+  
+
+
+        <button type="submit" class="nhsuk-button">Continue</button>
+      </form>
+
+      {{ backLink({
+        "href": "q4-convenient",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}

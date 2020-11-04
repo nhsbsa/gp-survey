@@ -1,0 +1,114 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <form action="/v1/q3a-method-worked-well" method="post" class="form">
+        <fieldset class="nhsuk-fieldset">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+            <span class="nhsuk-caption-l">
+              <span class="nhsuk-u-visually-hidden"> This is:</span>
+              Question 3 of 6
+            </span>
+              What was the main way you received care and advice on this occasion?
+            </h1>
+          </legend>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-person" name="appointment" type="radio" value="a face to face" {{ checked("appointment", "a face to face appointment") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-person">
+                In person (face to face)</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-phone" name="appointment" type="radio" value="a telephone" {{ checked("appointment", "a telephone call") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-phone">
+                Telephone call</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-video" name="appointment" type="radio" value="a video consultation" {{ checked("appointment", "a video consultation") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-video">
+                Video consultation</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-email" name="appointment" type="radio" value="an email" {{ checked("appointment", "an email") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-email">
+                Email</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-webchat" name="appointment" type="radio" value="a webchat" {{ checked("appointment", "a webchat conversation") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-webchat">
+                Webchat</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="appointment-other" name="appointment" type="radio" value="an other" {{ checked("appointment", "an other method") }} aria-controls="appointment-type-other" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="appointment-other">
+                Other</label>
+              </div>
+              <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="appointment-type-other">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="appointment-unknown">
+                  Tell us how you had your appointment
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="appointment-unknown" name="appointment" type="text">
+              </div>
+
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit" class="nhsuk-button">Continue</button>
+      </form>
+
+
+      {{ backLink({
+        "href": "q2-speed",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}

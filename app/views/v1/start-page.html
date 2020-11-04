@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Start page template - NHS.UK prototype kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ breadcrumb({
+  href: "/",
+  text: "Home"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Tell us your experience of your general practice
+appointments
+      </h1>
+
+      <p class="nhsuk-body-l">
+        Help us improve GP services by telling us about your most recent appointment with your general practice.
+      </p>
+      <p>This could be with a GP, nurse or other healthcare professional.
+      </p>
+
+<p>You should have received a text message from [NHS England] asking you to complete this short feedback form.</p>
+{{ details({
+  "text": "What if I have not received a text message?",
+  "HTML": "
+  <p>If you have not received a text message from your GP Practice inviting you to give feedback you should .....</p>
+    <p></p>
+  "
+}) }}
+{{ insetText({
+  "HTML": "<p>It should take less than 2 minutes to complete</p>"
+}) }}
+      <a href="q1-ease" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Start now
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}

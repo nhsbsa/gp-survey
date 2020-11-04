@@ -1,0 +1,97 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/v1/q2-speed" method="post" class="form">
+<h1 class="nhsuk-fieldset__legend--l">
+            <span class="nhsuk-caption-l">
+              <span class="nhsuk-u-visually-hidden"> This is:</span>
+              Question 1 of 6
+            </span>
+How easy was it for you to make an appointment, or to seek medical care or advice?
+</h1>
+
+        {{ radios({
+          "idPrefix": "example",
+          "name": "example",
+          "fieldset": {
+            "legend": {
+              "text": "How easy was it for you to make an appointment, or to seek medical care or advice?",
+              "classes": "nhsuk-u-visually-hidden",
+              "isPageHeading": false
+            }
+          },
+          "items": [
+            {
+              "value": "very easy",
+              "text": "Very easy"
+            },
+            {
+              "value": "easy",
+              "text": "Easy"
+            },
+            {
+              "value": "neither easy or difficult",
+              "text": "Neither easy or difficult"
+            },
+            {
+              "value": "difficult",
+              "text": "Difficult"
+            },
+            {
+              "value": "very difficult",
+              "text": "Very difficult"
+            }
+          ]
+        }) }}
+
+
+        <button type="submit" class="nhsuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}

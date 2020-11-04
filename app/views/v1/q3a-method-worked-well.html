@@ -1,0 +1,102 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/v1/q4-convenient" method="post" class="form">
+<fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+    <h1 class="nhsuk-fieldset__heading">
+    <span class="nhsuk-caption-l">
+              <span class="nhsuk-u-visually-hidden"> This is:</span>
+              Question 4 of 6
+            </span>
+      How do you feel about getting care and advice through {{ data ['appointment'] }}?
+
+    </h1>
+  </legend>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="care-well" name="careType" type="radio" value="a face to face" {{ checked("appointment", "a face to face") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-well">
+                It worked very well</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="care-ok" name="careType" type="radio" value="a telephone" {{ checked("appointment", "a telephone") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-ok">
+                It was OK</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="care-bad" name="careType" type="radio" value="a video consultation" {{ checked("appointment", "a video consultation") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-bad">
+                It did not work for me</label>
+              </div>
+              <div class="nhsuk-radios__divider">or
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="care-nk" name="careType" type="radio" value="a video consultation" {{ checked("appointment", "a video consultation") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-nk">
+                I&#39;m not sure</label>
+              </div>
+
+            </div>
+          </div>
+
+        </fieldset>
+  
+
+
+        <button type="submit" class="nhsuk-button">Continue</button>
+      </form>
+
+      {{ backLink({
+        "href": "q3-appointment-method",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}

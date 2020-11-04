@@ -1,0 +1,105 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Tell us about your visit to your GP today
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your feedback will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/v1/q5-needs" method="post" class="form">
+<fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+    <h1 class="nhsuk-fieldset__heading">
+    <span class="nhsuk-caption-l">
+              <span class="nhsuk-u-visually-hidden"> This is:</span>
+              Question 5 of 6
+            </span>
+      Overall, how convenient was the process of getting care and advice on this occasion?
+
+    </h1>
+  </legend>
+          <div class="nhsuk-form-group">
+            <div class="nhsuk-radios">
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="very-convenient" name="convenience" type="radio" value="very convenient" {{ checked("convenience", "very convenient") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-well">
+                Very convenient</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="convenient" name="convenience" type="radio" value="convenient" {{ checked("appointment", "convenient") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-ok">
+                Convenient</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="neutral-convenience" name="convenience" type="radio" value="neutral convenience" {{ checked("convenience", "Neither convenient nor inconvenient") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="neutral-convenience">
+                Neither convenient or inconvenient</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="inconvenient" name="convenience" type="radio" value="inconvenient" {{ checked("convenience", "Inconvenient") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-bad">
+                Inconvenient</label>
+              </div>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="very-inconvenient" name="convenience" type="radio" value="very inconvenient" {{ checked("convenience", "Very inconvenient") }}>
+                <label class="nhsuk-label nhsuk-radios__label" for="care-bad">
+                Very inconvenient</label>
+              </div>
+
+            </div>
+          </div>
+
+        </fieldset>
+  
+
+
+        <button type="submit" class="nhsuk-button">Continue</button>
+      </form>
+
+      {{ backLink({
+        "href": "q3a-method-worked-well",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
+{% block footer %}
+  {{ footer({
+    "links": [
+      {
+        "URL": "/docs",
+        "label": "Home"
+      },
+      {
+        "URL": "/examples/passing-data/clear-data",
+        "label": "Clear data"
+      },
+      {
+        "URL": "/docs/about",
+        "label": "About and support"
+      },
+      {
+        "URL": "https://github.com/nhsuk/nhsuk-prototype-kit",
+        "label": "NHS.UK prototype kit - GitHub"
+      }
+    ]
+  })}}
+{% endblock %}
